@@ -13,5 +13,6 @@
 #define NotificationTypeServiceExtensionId @"notificationServiceExtensionId"
 #define NotificationTypeContentExtensionId @"notificationContentExtensionId"
 
+#define ActionIdentifier @"ActionIdentifier"
 
 #endif /* Constant_h */

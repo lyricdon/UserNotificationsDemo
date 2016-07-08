@@ -9,7 +9,7 @@
 #import "ViewController.h"
 
 @interface ViewController ()
-
+@property (weak, nonatomic) IBOutlet UIImageView *imgView;
 @end
 
 @implementation ViewController
@@ -21,11 +21,14 @@
 
 - (void)showImage
 {
-    
+    _imgView.image = [UIImage imageNamed:@"Valeera.jpg"];
+    _imgView.hidden = NO;
 }
 
 - (IBAction)sendPlainNoti:(id)sender
 {
+    _imgView.hidden = YES;
+    
     UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
     
     UNMutableNotificationContent *content = [UNMutableNotificationContent new];
@@ -42,6 +45,8 @@
 }
 
 - (IBAction)sendServiceExtensionNoti:(id)sender {
+    _imgView.hidden = YES;
+    
     UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
     
     UNMutableNotificationContent *content = [UNMutableNotificationContent new];
@@ -66,6 +71,8 @@
 
 - (IBAction)sendContentExtensionNoti:(id)sender
 {
+    _imgView.hidden = YES;
+    
     UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
     
     UNMutableNotificationContent *content = [UNMutableNotificationContent new];
