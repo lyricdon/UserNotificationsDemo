@@ -34,11 +34,12 @@
             UNNotificationAction *actTwo = [UNNotificationAction actionWithIdentifier:ActionIdentifier title:@"Close" options:UNNotificationActionOptionDestructive];
             UNNotificationAction *actThree = [UNNotificationAction actionWithIdentifier:ActionIdentifier title:@"None" options:UNNotificationActionOptionNone];
             
-            UNNotificationCategory *plainCategory = [UNNotificationCategory categoryWithIdentifier:NotificationTypePlainId actions:@[actOne,actTwo] minimalActions:@[] intentIdentifiers:@[] options:UNNotificationCategoryOptionNone];
+            UNNotificationCategory *plainCategory =
+            [UNNotificationCategory categoryWithIdentifier:NotificationTypePlainId actions:@[actOne,actTwo] intentIdentifiers:@[] options:UNNotificationCategoryOptionNone];
             
-            UNNotificationCategory *serviceCategory = [UNNotificationCategory categoryWithIdentifier:NotificationTypeServiceExtensionId actions:@[actOne,actThree] minimalActions:@[actTwo] intentIdentifiers:@[] options:UNNotificationCategoryOptionNone];
+            UNNotificationCategory *serviceCategory = [UNNotificationCategory categoryWithIdentifier:NotificationTypeServiceExtensionId actions:@[actOne,actThree] intentIdentifiers:@[] options:UNNotificationCategoryOptionNone];
             
-            UNNotificationCategory *contentCategory = [UNNotificationCategory categoryWithIdentifier:NotificationTypeContentExtensionId actions:@[actOne,actTwo,actThree] minimalActions:@[actThree] intentIdentifiers:@[] options:UNNotificationCategoryOptionNone];
+            UNNotificationCategory *contentCategory = [UNNotificationCategory categoryWithIdentifier:NotificationTypeContentExtensionId actions:@[actOne,actTwo,actThree] intentIdentifiers:@[] options:UNNotificationCategoryOptionNone];
             
             [center setNotificationCategories:[NSSet setWithObjects:plainCategory,serviceCategory,contentCategory, nil]];
         }
